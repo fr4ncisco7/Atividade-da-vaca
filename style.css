@@ -1,0 +1,281 @@
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+.ceu {
+    background-color: #87ceeb;
+    height: 70%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: mudar-cor-ceu 30s linear infinite;
+    overflow: hidden;
+}
+
+.chao {
+    background-color: rgb(47, 235, 53);
+    height: 30%;
+    width: 100%;
+    position: absolute;
+    bottom: 0; /* coloca em baixo */
+    left: 0;
+}
+
+.vaca {
+    position: absolute;
+    bottom: 0; /* Posiciona na base do chão */
+    left: 20%; /* Posição horizontal */
+    z-index: 30; /* Acima do chão */
+    height: 120px; /* Altura da vaca */
+    width: 150px; /* Largura da vaca */
+}
+
+/* Corpo da vaca */
+.corpo {
+    position: absolute;
+    bottom: 0;
+    width: 100px;
+    height: 60px;
+    background-color: white;
+    border-radius: 40px 40px 40px 40px;
+}
+
+/* Cabeça da vaca */
+.cabeca {
+    position: absolute;
+    bottom: 30px;
+    left: -20px;
+    width: 50px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50% 30% 30% 50%;
+}
+
+/* Manchas */
+.mancha1, .mancha2, .mancha3 {
+    position: absolute ;
+    background-color: black;
+    border-radius: 50%;
+    bottom: 30px;
+    margin: 60px;
+    margin-left: 10px;
+}
+
+.mancha1 {
+    width: 30px;
+    height: 25px;
+    top: 10px;
+    left: 20px;
+}
+
+.mancha2 {
+    width: 20px;
+    height: 15px;
+    top: 5px;
+    left: 60px;
+}
+
+.mancha3 {
+    width: 15px;
+    height: 12px;
+    top: 30px;
+    left: 40px;
+}
+
+/* Pernas */
+.perna1, .perna2, .perna3, .perna4 {
+    position: absolute;
+    width: 10px;
+    height: 30px;
+    background-color: white;
+    bottom: -30px;
+}
+
+.perna1 {
+    left: 15px;
+}
+
+.perna2 {
+    left: 35px;
+}
+
+.perna3 {
+    left: 65px;
+}
+
+.perna4 {
+    left: 85px;
+}
+
+/* Chifres */
+.chifre1, .chifre2 {
+    position: absolute;
+    width: 8px;
+    height: 15px;
+    background-color: #d3d3d3;
+    border-radius: 5px;
+}
+
+.chifre1 {
+    bottom: 65px;
+    left: 0;
+    transform: rotate(-30deg);
+}
+
+.chifre2 {
+    bottom: 65px;
+    left: 15px;
+    transform: rotate(30deg);
+}
+
+/* Olho */
+.olho {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: black;
+    border-radius: 50%;
+    bottom: 55px;
+    left: 10px;
+}
+
+/* Focinho */
+.focinho {
+    position: absolute;
+    width: 20px;
+    height: 15px;
+    background-color: pink;
+    border-radius: 50%;
+    bottom: 40px;
+    left: -15px;
+}
+
+
+
+.sol {
+    background-color: yellow;
+    height: 100px;
+    width: 100px;
+    z-index: 20;
+    position: absolute;
+    border-radius: 100%;
+    left: -100px; /* Começa fora da tela */
+    top: 50px;
+    animation: movimento-sol 30s linear infinite;
+    box-shadow: 0 0 50px 10px rgba(255, 255, 0, 0.5);
+}
+
+.lua {
+    background-color: #f5f3ce;
+    height: 80px;
+    width: 80px;
+    z-index: 20;
+    position: absolute;
+    border-radius: 100%;
+    left: -100px;
+    top: 50px;
+    box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.3);
+    opacity: 0;
+    animation: movimento-lua 30s linear infinite;
+}
+
+/* Estrelas com CSS puro */
+.estrela1, .estrela2, .estrela3, .estrela4, .estrela5,
+.estrela6, .estrela7, .estrela8, .estrela9, .estrela10 {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    width: 2px;
+    height: 2px;
+    box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.7);
+    opacity: 0;
+    animation: aparecer-estrelas 30s linear infinite;
+}
+
+.estrela1 { top: 10%; left: 20%; }
+.estrela2 { top: 15%; left: 50%; width: 3px; height: 3px; }
+.estrela3 { top: 25%; left: 80%; }
+.estrela4 { top: 30%; left: 40%; }
+.estrela5 { top: 8%; left: 65%; width: 3px; height: 3px; }
+.estrela6 { top: 35%; left: 15%; }
+.estrela7 { top: 20%; left: 30%; }
+.estrela8 { top: 40%; left: 70%; width: 3px; height: 3px; }
+.estrela9 { top: 5%; left: 90%; }
+.estrela10 { top: 45%; left: 55%; }
+
+@keyframes movimento-sol {
+    0% {
+        left: -100px;
+        top: 50px;
+        opacity: 1;
+        background-color: yellow;
+        box-shadow: 0 0 50px 10px rgba(255, 255, 0, 0.5);
+    }
+    15% {
+        left: 25%;
+        top: 30px;
+    }
+    30% {
+        left: 75%;
+        top: 30px;
+    }
+    45% {
+        left: calc(100% + 100px);
+        top: 50px;
+    }
+    85% { /* Aumentei para 85% - sol fica fora da tela por mais tempo */
+        left: -100px;
+        top: 50px;
+        
+    }
+    90% { /* Sol começa a aparecer novamente */
+        opacity: 0.3;
+    }
+    100% {
+        left: -100px;
+        top: 50px;
+        opacity: 1;
+    }
+}
+
+@keyframes mudar-cor-ceu {
+    0% {
+        background-color: #87ceeb; /* Azul claro (início) */
+    }
+    15% {
+        background-color: #87ceeb; /* Azul claro (sol a 25%) */
+    }
+    30% {
+        background-color: #ffb84d; /* Amarelo alaranjado (sol a 75%) */
+    }
+    45% {
+        background-color: #ff7e50; /* Laranja avermelhado (sol saindo) */
+    }
+    50% {
+        background-color: #0a1a3f; /* Azul escuro (noite) */
+    }
+    85% { /* Mantém o céu escuro por mais tempo */
+        background-color: #0a1a3f; /* Mantém azul escuro */
+    }
+    90% {
+        background-color: #614e85; /* Roxo azulado (amanhecer) */
+    }
+    100% {
+        background-color: #87ceeb; /* Azul claro (manhã) */
+    }
+}
+
+@keyframes aparecer-estrelas {
+    0%, 45% {
+        opacity: 0;
+    }
+    55%, 85% { /* Estrelas visíveis até 85% */
+        opacity: 1;
+    }
+    95%, 100% {
+        opacity: 0;
+    }
+}
